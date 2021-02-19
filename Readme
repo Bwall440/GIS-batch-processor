@@ -1,0 +1,41 @@
+Copyright 2019, Brian Wall, All rights reserved. 
+
+This program is designed to function with both 'BatchProcessor.py and 'Processor.py' and requires both files to function. This program uses Python 3 and thus can only be used in ArcGIS PRO
+
+this program will take the input values chosen the user and use them to batch process raster and vector
+files without having to run each file individually through the process. This program has limited functionality as it was written by a begining programming student and should be used with both caution and reservations on its capabilities.
+
+Supported Files:
+
+Currently the processor can only output to "WGS 1984 UTM 10N" and "NAD 83 UTM Zone 10N" projections, but plans are in place to expand. The processor can only read a limited amount of projections and transformations, which are most useful to Northern California locations. plans to add more in the future.
+
+
+Installation:
+
+unzip the folder to the desired location. The folder should be set up with the input folder, output folder, and two python codes ("BatchProcessor.py" and (Processor.py").
+
+2) open up the BatchProcessor.py and set the location of the processor file in the subprocess input line (Line 173). 
+
+3) make sure that the path to ArcGIS PRO's python environment is set to its location. (Line 176)
+
+
+I understand this is highly inconvienient but for now its the only way to connect the two files. A workaround will be added later to more easily change the file path of the processor.py file. 
+
+
+Getting Started:
+
+1)Run the BatchProcessor.py file from the command prompt
+
+2)select your the folder. Make sure that all data to be processed is unzipped in the file or it will not be processed
+
+3) Select the output folder. This is where the new files will be sent. Within the output folder is the Originals folder where the original files will be sent to after processing. 
+
+4) select file type. Choose Raster for georeferenced images and other raster files. Choose Vector for shapefiles. 
+
+5)Choose output projection. This is the desired projection that all files will be projected in. Currently there are only two options: "WGS 1984 UTM 10N" and "NAD 83 UTM Zone 10N"
+
+6) Once everything is selected, run the processor. this will take some time depending on how many files are being processed. once processing is complete you will see a promt letting you know that it is finished. 
+
+check your files in the output folder to make sure they are all processed correctly. Files that were in the right projection will be the same, and reprojected files will have a _Reprojected tag added to the file name. Check the files in ArcMap or ArcGIS PRO to ensure the process completed. Original files will be saved in the Originals folder for future use.
+
+
